@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Api方法鉴权认证拦截器
+ * Api方法鉴权认证切面
  * @Author linchenghui
  * @Date 2021/4/14
  */

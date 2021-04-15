@@ -17,6 +17,6 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration registration = registry.addInterceptor(new ApiAuthorizationInterceptor());
         // 添加拦截器路径
-        registration.addPathPatterns("/api/interceptor");
+//        registration.addPathPatterns("/api/interceptor");
     }
 }
