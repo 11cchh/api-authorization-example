@@ -17,6 +17,7 @@ import java.util.Map;
 
 /**
  * Api方法鉴权认证切面
+ *  注意:如果项目中有过滤器链时应该注意在链中放行后是否对 inputstream 有过操作,否则会读不到 requestBody 中的数据
  * @Author linchenghui
  * @Date 2021/4/14
  */
@@ -41,7 +42,7 @@ public class ApiAuthorizationAspect {
         String sign = request.getHeader("authorization");
         headers.put("appID",appID);
         headers.put("version",version);
-        headers.put("timestamp",timestamp);
+        headers.put("timestamp",String.valueOf(System.currentTimeMillis()));
         headers.put("service",service);
 
         // 获取请求体参数
@@ -77,7 +78,7 @@ public class ApiAuthorizationAspect {
         if(!flag){
             return "false";
         }
-
+        // 放行
         Object proceed = point.proceed();
         return proceed.toString();
     }

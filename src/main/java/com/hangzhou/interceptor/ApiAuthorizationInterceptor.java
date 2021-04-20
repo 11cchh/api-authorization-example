@@ -51,7 +51,7 @@ public class ApiAuthorizationInterceptor implements HandlerInterceptor {
                 String service = request.getHeader("service");
                 headers.put("appID",appID);
                 headers.put("version",version);
-                headers.put("timestamp",timestamp);
+                headers.put("timestamp",String.valueOf(System.currentTimeMillis()));
                 headers.put("service",service);
 
                 if ("POST".equalsIgnoreCase(request.getMethod())){

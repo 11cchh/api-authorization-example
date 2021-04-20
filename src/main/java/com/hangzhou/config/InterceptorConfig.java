@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class InterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        InterceptorRegistration registration = registry.addInterceptor(new ApiAuthorizationInterceptor());
+//        InterceptorRegistration registration = registry.addInterceptor(new ApiAuthorizationInterceptor());
         // 添加拦截器路径
 //        registration.addPathPatterns("/api/interceptor");
     }
