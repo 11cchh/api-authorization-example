@@ -42,7 +42,7 @@ public class ApiAuthorizationAspect {
         String sign = request.getHeader("authorization");
         headers.put("appID",appID);
         headers.put("version",version);
-        headers.put("timestamp",String.valueOf(System.currentTimeMillis()));
+        headers.put("timestamp",timestamp);
         headers.put("service",service);
 
         // 获取请求体参数
